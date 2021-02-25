@@ -13,6 +13,6 @@ const getLongestStringFromArray = (array, currentLongest = "") => {
     })
 
     return currentLongest.length < currentValue.length ? getLongestStringFromArray(newArray, currentValue) : getLongestStringFromArray(newArray, currentLongest)
-} 
+}
 
-console.log(getLongestStringFromArray(['abbbbbb', 'b', 'abc', 'bbb', 'ab', 'abac']));
+module.exports = getLongestStringFromArray
