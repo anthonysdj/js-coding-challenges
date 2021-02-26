@@ -1,0 +1,22 @@
+{
+  "name": "js-coding-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/squidbomb/js-coding-challenges.git"
+  },
+  "author": "Tonton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/squidbomb/js-coding-challenges/issues"
+  },
+  "homepage": "https://github.com/squidbomb/js-coding-challenges#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
