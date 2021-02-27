@@ -18,10 +18,13 @@ const sortStr2 = ({srcStr, targetStr, output = ''}) => {
 const isAnagrams = (str1, str2) => {
     if (!str1 || !str2 || typeof str1 !== 'string' || typeof str2 !== 'string') return null
 
-    if (str1.length !== str2.length) return false
+    // remove whitespace before comparing the length of strings
+    if (str1.trim().length !== str2.trim().length) return false
 
+    // sort the second string/target string
     let sorted = sortStr2({srcStr: str1, targetStr: str2})
 
+    // compare string values if they are the same
     return str1 === sorted
 }
 
