@@ -4,5 +4,5 @@ const isAnagrams = require('./anagrams')
 
 // console.log(getLongestStringFromArray([12344545, 'zzz', '', 'bbb', 'ab', '']));
 // console.log(getMostUsedCharInString('Jesus Christ'))
-console.log(isAnagrams('hello', 'elloh '))
+console.log(isAnagrams('he   llo', 'el lo h '))
 

@@ -26,6 +26,12 @@ const isAnagrams = (str1, str2) => {
     // remove whitespace before comparing the length of strings
     if (trimmedStr1.length !== trimmedStr2.length) return false
 
+    return trimmedStr1.split('').sort().join('') === trimmedStr2.split('').sort().join('')
+
+    /**
+     * 
+     * we can also loop through string 1 to rearrange string 2 using code below
+     */
     // sort the second string/target string
     let sorted = sortStr2({srcStr: trimmedStr1, targetStr: trimmedStr2})
 
