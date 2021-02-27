@@ -24,7 +24,7 @@ test('return the last char when more than one char shows up the same number of t
 })
 
 test('should return the most used character in a string', () => {
-    const output = getMostUsedCharInString('jesus')
+    const output = getMostUsedCharInString('Jesus')
 
     expect(output).toBe('s')
 })
