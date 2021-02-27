@@ -3,7 +3,7 @@ const isAnagrams = require('./anagrams')
 test('should return null if any input is not a string', () => {
     const isAnagram1 = isAnagrams(134, '123')
     const isAnagram2 = isAnagrams('123', 123)
-    const isAnagram3 = isAnagrams(123, 123)
+    const isAnagram3 = isAnagrams([123], 'string')
 
     expect(isAnagram1).toBe(null)
     expect(isAnagram2).toBe(null)
