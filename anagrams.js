@@ -18,14 +18,19 @@ const sortStr2 = ({srcStr, targetStr, output = ''}) => {
 const isAnagrams = (str1, str2) => {
     if (!str1 || !str2 || typeof str1 !== 'string' || typeof str2 !== 'string') return null
 
+    // we need to remove whitespace because we do not need it for comparison
+    // i'm using a new variable incase we need to output the original string
+    const trimmedStr1 = str1.replace(/\s/g,'')
+    const trimmedStr2 = str2.replace(/\s/g, '')
+
     // remove whitespace before comparing the length of strings
-    if (str1.trim().length !== str2.trim().length) return false
+    if (trimmedStr1.length !== trimmedStr2.length) return false
 
     // sort the second string/target string
-    let sorted = sortStr2({srcStr: str1, targetStr: str2})
+    let sorted = sortStr2({srcStr: trimmedStr1, targetStr: trimmedStr2})
 
     // compare string values if they are the same
-    return str1 === sorted
+    return trimmedStr1 === sorted
 }
 
 module.exports = isAnagrams

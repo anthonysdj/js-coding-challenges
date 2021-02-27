@@ -26,6 +26,14 @@ test('should return false if both input does not match length', () => {
     expect(isAnagram).toBe(false)
 })
 
+test('should return true when 2 parameters are anagrams of each other even if they have different amount of whitespace', () => {
+    const isAnagram1 = isAnagrams('lollygag', 'lolly gag')
+    const isAnagram2 = isAnagrams('termite dan', 'terminated')
+
+    expect(isAnagram1).toBe(true)
+    expect(isAnagram2).toBe(true)
+})
+
 test('should return true when 2 parameters are anagrams of each other', () => {
     const isAnagram = isAnagrams('mac', 'cam')
 
