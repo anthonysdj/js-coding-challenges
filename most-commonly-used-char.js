@@ -21,7 +21,8 @@ const maxCharCountObj = (keys, obj, output = {}) => {
     if (keys.length < 1) return output
 
     const char = keys.concat().shift()
-    const newKeys = keys.filter(key => key !== char)
+    // const newKeys = keys.filter(key => key !== char)
+    const newKeys = keys.slice(1)
 
     if (!output.count) return maxCharCountObj(newKeys, obj, {char: char, count: obj[char]})
     if (output.count <= obj[char]) return maxCharCountObj(newKeys, obj, {char: char, count: obj[char]})
