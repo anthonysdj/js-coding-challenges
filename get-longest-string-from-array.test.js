@@ -18,12 +18,14 @@ test('should return null if non array input is provided', () => {
 
 test('should return the longest string from a string array', () => {
     const longestString = getLongestStringFromArray(['aa', 'bbbb', 'ccc'])
+    const longestString2 = getLongestStringFromArray(['aa', 'bbbb', 'ccccccc'])
 
     expect(longestString).toBe('bbbb')
+    expect(longestString2).toBe('ccccccc')
 })
 
 test('should return the first longest string if longest string are more than 1', () => {
-    const longestString = getLongestStringFromArray(['aa', 'ddd', 'cccccc'])
+    const longestString = getLongestStringFromArray(['aa', 'ddd', 'ccc', 'aaa'])
 
-    expect(longestString).toBe('cccccc')
+    expect(longestString).toBe('ddd')
 })
