@@ -20,8 +20,10 @@ const mapCharAndCount = (str, output = {}) => {
 const maxCharCountObj = (keys, obj, output = {}) => {
     if (keys.length < 1) return output
 
-    const newKeys = keys.concat()
-    const char = newKeys.shift()
+    const char = keys.concat().shift()
+    const newKeys = keys.filter(key => {
+        return key !== char
+    })
 
     if (!output.count) return maxCharCountObj(newKeys, obj, {char: char, count: obj[char]})
 
