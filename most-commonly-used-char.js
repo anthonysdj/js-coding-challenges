@@ -9,12 +9,12 @@
 const mapCharAndCount = (str, output = {}) => {
     if (!str) return output
 
-    const strToArr = str.split('')
-    const char = strToArr.shift();
+    const char = str.split('').shift();
+    const newStr = str.split('').slice(1)
     const newCount = output[char] ? output[char] + 1 : 1
     const newOutput = { ...output, [char]: newCount }
 
-    return mapCharAndCount(strToArr.join(''), newOutput)
+    return mapCharAndCount(newStr.join(''), newOutput)
 }
 
 const maxCharCountObj = (keys, obj, output = {}) => {
