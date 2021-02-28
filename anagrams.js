@@ -10,9 +10,10 @@ const sortStr2 = ({srcStr, targetStr, output = ''}) => {
     if (!srcStr) return output
 
     const srcStrToArray = srcStr.split('')
-    const newOutput = output + srcStrToArray.shift()
+    const newOutput = output + srcStrToArray.concat().shift()
+    const newSrcStr = (srcStrToArray.slice(1)).join('')
 
-    return sortStr2({srcStr: srcStrToArray.join(''), targetStr, output: newOutput})
+    return sortStr2({srcStr: newSrcStr, targetStr, output: newOutput})
 }
 
 const isAnagrams = (str1, str2) => {
