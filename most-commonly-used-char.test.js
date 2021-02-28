@@ -17,6 +17,12 @@ test('should return null if input is empty string or null', () => {
     expect(nullInput).toBe(null)
 })
 
+test('should return white-space string if input is white space', () => {
+    const input = getMostUsedCharInString(' ')
+
+    expect(input).toBe('white-space')
+})
+
 test('return the last char when more than one char shows up the same number of times', () => {
     const output = getMostUsedCharInString('meetting')
 
