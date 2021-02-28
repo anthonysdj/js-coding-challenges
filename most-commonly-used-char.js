@@ -11,7 +11,7 @@ const mapCharAndCount = (str, output = {}) => {
 
     const strToArr = str.split('')
     const char = strToArr.shift();
-    const newCount = ++output[char] || 1
+    const newCount = output[char] ? output[char] + 1 : 1
     const newOutput = { ...output, [char]: newCount }
 
     return mapCharAndCount(strToArr.join(''), newOutput)
@@ -24,7 +24,6 @@ const maxCharCountObj = (keys, obj, output = {}) => {
     const newKeys = keys.filter(key => key !== char)
 
     if (!output.count) return maxCharCountObj(newKeys, obj, {char: char, count: obj[char]})
-
     if (output.count <= obj[char]) return maxCharCountObj(newKeys, obj, {char: char, count: obj[char]})
 
     return maxCharCountObj(newKeys, obj, output)
@@ -34,7 +33,6 @@ const getMostUsedCharInString = (string) => {
     if (!string || typeof string !== 'string') return null
 
     const charCountObj = mapCharAndCount(string)
-
     const output = maxCharCountObj(Object.keys(charCountObj), charCountObj)
 
     return output.char === ' ' ? 'white-space' : output.char
