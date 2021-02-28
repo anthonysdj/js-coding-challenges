@@ -41,7 +41,11 @@ describe('#isPalindrome', () => {
     })
 
     test('Should return true if input is a palindrome string', () => {
-        const output = isPalindrome('aba')
+        const output = isPalindrome('madam')
+        const output2 = isPalindrome('racecar')
+        const output3 = isPalindrome('Able was I ere I saw Elba')
         expect(output).toBe(true)
+        expect(output2).toBe(true)
+        expect(output3).toBe(true)
     })
 })
