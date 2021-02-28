@@ -11,7 +11,8 @@ const mapCharAndCount = (str, output = {}) => {
 
     const strToArr = str.split('')
     const char = strToArr.shift();
-    const newOutput = { ...output, [char]: ++output[char] || 1 }
+    const newCount = ++output[char] || 1
+    const newOutput = { ...output, [char]: newCount }
 
     return mapCharAndCount(strToArr.join(''), newOutput)
 }
